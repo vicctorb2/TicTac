@@ -11,12 +11,13 @@ import java.awt.event.ActionListener;
  */
 public class Panel extends JPanel {
 
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9;
+    static Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
     static boolean firstplayer = true;
     static boolean secondplayer = false;
-    boolean playwithbot = false;
+    static boolean playwithbot = false;
+    static boolean autoplay = false;
 
-    int count = 9;
+    static int count = 9;
 
 
     public Panel() {
@@ -30,8 +31,8 @@ public class Panel extends JPanel {
         b8 = new Button();
         b9 = new Button();
         setLayout(new GridLayout(3, 3));
-        setListeners();
         addOnPanel();
+        setListeners();
     }
 
     private void setListeners() {
@@ -39,8 +40,11 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b1.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
@@ -48,8 +52,11 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b2.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
@@ -57,8 +64,11 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b3.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
@@ -66,7 +76,7 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b4.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
                 }
             }
@@ -75,8 +85,11 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b5.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
@@ -84,8 +97,11 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b6.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
@@ -93,8 +109,11 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b7.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
@@ -102,8 +121,11 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b8.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
@@ -111,15 +133,18 @@ public class Panel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b9.gamePlay(Panel.this);
-                if(playwithbot) {
+                if (playwithbot) {
                     botGameplay();
+                    if (autoplay) {
+                        botGameplay();
+                    }
                 }
             }
         });
 
     }
 
-    public boolean checkWinner() {
+    public static boolean checkWinner() {
         if (b1.getText() != "" && b2.getText() != "" && b3.getText() != "") {
             if (b1.getText() == b2.getText() && b2.getText() == b3.getText()) {
                 return true;
@@ -167,7 +192,7 @@ public class Panel extends JPanel {
         return false;
     }
 
-    public void restart() {
+    public static void restart() {
 
         if (JOptionPane.showConfirmDialog(null, "Restart?", null, JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             b1.setText("");
@@ -197,19 +222,19 @@ public class Panel extends JPanel {
                 (b1.getText() == "X" && b3.getText() == "X")) {
             if (b1.getText() == b2.getText()) {
                 if (b3.getText() != "O") {
-                    b3.setButtonAsO(Panel.this);
+                    b3.setButtonAsO();
                     return;
                 }
             }
             if (b2.getText() == b3.getText()) {
                 if (b1.getText() != "O") {
-                    b1.setButtonAsO(Panel.this);
+                    b1.setButtonAsO();
                     return;
                 }
             }
             if (b1.getText() == b3.getText()) {
                 if (b2.getText() != "O") {
-                    b2.setButtonAsO(Panel.this);
+                    b2.setButtonAsO();
                     return;
                 }
             }
@@ -219,19 +244,19 @@ public class Panel extends JPanel {
                 (b4.getText() == "X" && b6.getText() == "X")) {
             if (b4.getText() == b5.getText()) {
                 if (b6.getText() != "O") {
-                    b6.setButtonAsO(Panel.this);
+                    b6.setButtonAsO();
                     return;
                 }
             }
             if (b5.getText() == b6.getText()) {
                 if (b4.getText() != "O") {
-                    b4.setButtonAsO(Panel.this);
+                    b4.setButtonAsO();
                     return;
                 }
             }
             if (b4.getText() == b6.getText()) {
                 if (b5.getText() != "O") {
-                    b5.setButtonAsO(Panel.this);
+                    b5.setButtonAsO();
                     return;
                 }
             }
@@ -241,19 +266,19 @@ public class Panel extends JPanel {
                 (b7.getText() == "X" && b9.getText() == "X")) {
             if (b7.getText() == b8.getText()) {
                 if (b9.getText() != "O") {
-                    b9.setButtonAsO(Panel.this);
+                    b9.setButtonAsO();
                     return;
                 }
             }
             if (b8.getText() == b9.getText()) {
                 if (b7.getText() != "O") {
-                    b7.setButtonAsO(Panel.this);
+                    b7.setButtonAsO();
                     return;
                 }
             }
             if (b7.getText() == b9.getText()) {
                 if (b8.getText() != "O") {
-                    b8.setButtonAsO(Panel.this);
+                    b8.setButtonAsO();
                     return;
                 }
             }
@@ -263,19 +288,19 @@ public class Panel extends JPanel {
                 (b1.getText() == "X" && b7.getText() == "X")) {
             if (b1.getText() == b4.getText()) {
                 if (b7.getText() != "O") {
-                    b7.setButtonAsO(Panel.this);
+                    b7.setButtonAsO();
                     return;
                 }
             }
             if (b4.getText() == b7.getText()) {
                 if (b1.getText() != "O") {
-                    b1.setButtonAsO(Panel.this);
+                    b1.setButtonAsO();
                     return;
                 }
             }
             if (b1.getText() == b7.getText()) {
                 if (b4.getText() != "O") {
-                    b4.setButtonAsO(Panel.this);
+                    b4.setButtonAsO();
                     return;
                 }
             }
@@ -285,19 +310,19 @@ public class Panel extends JPanel {
                 (b2.getText() == "X" && b8.getText() == "X")) {
             if (b2.getText() == b5.getText()) {
                 if (b8.getText() != "O") {
-                    b8.setButtonAsO(Panel.this);
+                    b8.setButtonAsO();
                     return;
                 }
             }
             if (b5.getText() == b8.getText()) {
                 if (b2.getText() != "O") {
-                    b2.setButtonAsO(Panel.this);
+                    b2.setButtonAsO();
                     return;
                 }
             }
             if (b2.getText() == b8.getText()) {
                 if (b5.getText() != "O") {
-                    b5.setButtonAsO(Panel.this);
+                    b5.setButtonAsO();
                     return;
                 }
             }
@@ -307,19 +332,19 @@ public class Panel extends JPanel {
                 (b3.getText() == "X" && b9.getText() == "X")) {
             if (b3.getText() == b6.getText()) {
                 if (b9.getText() != "O") {
-                    b9.setButtonAsO(Panel.this);
+                    b9.setButtonAsO();
                     return;
                 }
             }
             if (b6.getText() == b9.getText()) {
                 if (b3.getText() != "O") {
-                    b3.setButtonAsO(Panel.this);
+                    b3.setButtonAsO();
                     return;
                 }
             }
             if (b3.getText() == b9.getText()) {
                 if (b6.getText() != "O") {
-                    b6.setButtonAsO(Panel.this);
+                    b6.setButtonAsO();
                     return;
                 }
             }
@@ -329,19 +354,19 @@ public class Panel extends JPanel {
                 (b1.getText() == "X" && b9.getText() == "X")) {
             if (b1.getText() == b5.getText()) {
                 if (b9.getText() != "O") {
-                    b9.setButtonAsO(Panel.this);
+                    b9.setButtonAsO();
                     return;
                 }
             }
             if (b5.getText() == b9.getText()) {
                 if (b1.getText() != "O") {
-                    b1.setButtonAsO(Panel.this);
+                    b1.setButtonAsO();
                     return;
                 }
             }
             if (b1.getText() == b9.getText()) {
                 if (b5.getText() != "O") {
-                    b5.setButtonAsO(Panel.this);
+                    b5.setButtonAsO();
                     return;
                 }
             }
@@ -351,58 +376,61 @@ public class Panel extends JPanel {
                 (b7.getText() == "X" && b3.getText() == "X")) {
             if (b7.getText() == b5.getText()) {
                 if (b3.getText() != "O") {
-                    b3.setButtonAsO(Panel.this);
+                    b3.setButtonAsO();
                     return;
                 }
             }
             if (b5.getText() == b3.getText()) {
                 if (b7.getText() != "O") {
-                    b7.setButtonAsO(Panel.this);
+                    b7.setButtonAsO();
                     return;
                 }
             }
             if (b3.getText() == b7.getText()) {
                 if (b5.getText() != "O") {
-                    b5.setButtonAsO(Panel.this);
+                    b5.setButtonAsO();
                     return;
                 }
             }
         }
         if (b1.getText() == "") {
-            b1.setButtonAsO(Panel.this);
+            b1.setButtonAsO();
             return;
         }
         if (b5.getText() == "") {
-            b5.setButtonAsO(Panel.this);
+            b5.setButtonAsO();
             return;
         }
         if (b3.getText() == "") {
-            b3.setButtonAsO(Panel.this);
+            b3.setButtonAsO();
             return;
         }
         if (b7.getText() == "") {
-            b7.setButtonAsO(Panel.this);
+            b7.setButtonAsO();
             return;
         }
         if (b9.getText() == "") {
-            b9.setButtonAsO(Panel.this);
+            b9.setButtonAsO();
             return;
         }
         if (b2.getText() == "") {
-            b2.setButtonAsO(Panel.this);
+            b2.setButtonAsO();
             return;
         }
         if (b4.getText() == "") {
-            b4.setButtonAsO(Panel.this);
+            b4.setButtonAsO();
             return;
         }
         if (b6.getText() == "") {
-            b6.setButtonAsO(Panel.this);
+            b6.setButtonAsO();
         }
         if (b8.getText() == "") {
-            b8.setButtonAsO(Panel.this);
+            b8.setButtonAsO();
             return;
         }
+    }
+
+    public void autoPlay() {
     }
 
 

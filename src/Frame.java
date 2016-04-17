@@ -1,8 +1,6 @@
 import sun.management.snmp.jvmmib.JVM_MANAGEMENT_MIB;
 
 import javax.swing.*;
-import javax.swing.text.StyledEditorKit;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,6 +15,7 @@ public class Frame extends JFrame {
         createMenu();
         setTitle("TicTac");
         setSize(600, 600);
+        setDefaultLookAndFeelDecorated(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setFocusable(true);
@@ -48,6 +47,7 @@ public class Frame extends JFrame {
         JMenuItem yellow = new JMenuItem("Yellow");
         JMenuItem singleplayer = new JMenuItem("Singleplayer");
         JMenuItem multiplayer = new JMenuItem("Multiplayer");
+        JMenuItem autoplay = new JMenuItem("Autoplay");
 
         menu.add(restart);
         menu.add(exit);
@@ -62,6 +62,7 @@ public class Frame extends JFrame {
 
         menu4.add(singleplayer);
         menu4.add(multiplayer);
+        menu4.add(autoplay);
 
         menuBar.add(menu);
         menuBar.add(menu2);
@@ -80,7 +81,7 @@ public class Frame extends JFrame {
         restart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.restart();
+                Panel.restart();
             }
         });
         classic.addActionListener(new ActionListener() {
@@ -104,60 +105,66 @@ public class Frame extends JFrame {
         green.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.b1.setButtonBackground(0);
-                panel.b2.setButtonBackground(0);
-                panel.b3.setButtonBackground(0);
-                panel.b4.setButtonBackground(0);
-                panel.b5.setButtonBackground(0);
-                panel.b6.setButtonBackground(0);
-                panel.b7.setButtonBackground(0);
-                panel.b8.setButtonBackground(0);
-                panel.b9.setButtonBackground(0);
+                Panel.b1.setButtonBackground(0);
+                Panel.b2.setButtonBackground(0);
+                Panel.b3.setButtonBackground(0);
+                Panel.b4.setButtonBackground(0);
+                Panel.b5.setButtonBackground(0);
+                Panel.b6.setButtonBackground(0);
+                Panel.b7.setButtonBackground(0);
+                Panel.b8.setButtonBackground(0);
+                Panel.b9.setButtonBackground(0);
 
             }
         });
         yellow.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.b1.setButtonBackground(1);
-                panel.b2.setButtonBackground(1);
-                panel.b3.setButtonBackground(1);
-                panel.b4.setButtonBackground(1);
-                panel.b5.setButtonBackground(1);
-                panel.b6.setButtonBackground(1);
-                panel.b7.setButtonBackground(1);
-                panel.b8.setButtonBackground(1);
-                panel.b9.setButtonBackground(1);
+                Panel.b1.setButtonBackground(1);
+                Panel.b2.setButtonBackground(1);
+                Panel.b3.setButtonBackground(1);
+                Panel.b4.setButtonBackground(1);
+                Panel.b5.setButtonBackground(1);
+                Panel.b6.setButtonBackground(1);
+                Panel.b7.setButtonBackground(1);
+                Panel.b8.setButtonBackground(1);
+                Panel.b9.setButtonBackground(1);
             }
         });
         blue.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.b1.setButtonBackground(2);
-                panel.b2.setButtonBackground(2);
-                panel.b3.setButtonBackground(2);
-                panel.b4.setButtonBackground(2);
-                panel.b5.setButtonBackground(2);
-                panel.b6.setButtonBackground(2);
-                panel.b7.setButtonBackground(2);
-                panel.b8.setButtonBackground(2);
-                panel.b9.setButtonBackground(2);
+                Panel.b1.setButtonBackground(2);
+                Panel.b2.setButtonBackground(2);
+                Panel.b3.setButtonBackground(2);
+                Panel.b4.setButtonBackground(2);
+                Panel.b5.setButtonBackground(2);
+                Panel.b6.setButtonBackground(2);
+                Panel.b7.setButtonBackground(2);
+                Panel.b8.setButtonBackground(2);
+                Panel.b9.setButtonBackground(2);
             }
         });
         singleplayer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.playwithbot=false;
-                panel.count=9;
-                panel.restart();
+                Panel.playwithbot=false;
+                Panel.count=9;
+                Panel.restart();
             }
         });
         multiplayer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.playwithbot=true;
-                panel.count=5;
-                panel.restart();
+                Panel.playwithbot=true;
+                Panel.count=5;
+                Panel.restart();
+            }
+        });
+        autoplay.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panel.autoPlay();
             }
         });
     }

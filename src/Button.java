@@ -56,41 +56,50 @@ public class Button extends JButton {
         }
     }
 
-    public void setButtonAsX(Panel panel) {
+    public void setButtonAsX() {
         setText("X");
         setFont(font);
-        if(panel.checkWinner()) {
+        if(Panel.checkWinner()) {
             JOptionPane.showMessageDialog(null, "Победил Х!");
+            Panel.restart();
+        }
+    }
+
+    public void setButtonAsO() {
+        setText("O");
+        setFont(font);
+        if(Panel.checkWinner()) {
+            JOptionPane.showMessageDialog(null, "Победил O!");
+            Panel.restart();
+        }
+    }
+    public void setButtonAs(Panel panel,String str){
+        setText(str);
+        setFont(font);
+        if(panel.checkWinner()){
+            JOptionPane.showMessageDialog(null,"Победил "+str+"!");
             panel.restart();
         }
     }
 
-    public void setButtonAsO(Panel panel) {
-        setText("O");
-        setFont(font);
-        if(panel.checkWinner()) {
-            JOptionPane.showMessageDialog(null, "Победил O!");
-            panel.restart();
-        }
-    }
 
     public void gamePlay(Panel panel) {
         if (panel.firstplayer) {
             if (this.getText() == "") {
                 panel.count--;
-                this.setButtonAsX(panel);
-                if(!panel.playwithbot) {
-                    panel.firstplayer = false;
-                    panel.secondplayer = true;
+                this.setButtonAsX();
+                if(!Panel.playwithbot) {
+                    Panel.firstplayer = false;
+                    Panel.secondplayer = true;
                 }
             }
         } else {
             if (this.getText() == "") {
                 panel.count--;
-                this.setButtonAsO(panel);
-                if(!panel.playwithbot) {
-                    panel.firstplayer = true;
-                    panel.secondplayer = false;
+                this.setButtonAsO();
+                if(!Panel.playwithbot) {
+                    Panel.firstplayer = true;
+                    Panel.secondplayer = false;
                 }
             }
         }
