@@ -59,27 +59,18 @@ public class Button extends JButton {
     public void setButtonAsX() {
         setText("X");
         setFont(font);
-        if(Panel.checkWinner()) {
-            JOptionPane.showMessageDialog(null, "Победил Х!");
-            Panel.restart();
-        }
+        Panel.checkWinner();
     }
 
     public void setButtonAsO() {
         setText("O");
         setFont(font);
-        if(Panel.checkWinner()) {
-            JOptionPane.showMessageDialog(null, "Победил O!");
-            Panel.restart();
-        }
+        Panel.checkWinner();
     }
-    public void setButtonAs(Panel panel,String str){
+    public void setButtonAs(String str){
         setText(str);
         setFont(font);
-        if(panel.checkWinner()){
-            JOptionPane.showMessageDialog(null,"Победил "+str+"!");
-            panel.restart();
-        }
+        Panel.checkWinner();
     }
 
 

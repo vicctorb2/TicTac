@@ -164,7 +164,8 @@ public class Frame extends JFrame {
         autoplay.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.autoPlay();
+                Panel.restart_without_confirm();
+                Panel.autoPlay();
             }
         });
     }

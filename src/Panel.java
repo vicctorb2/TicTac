@@ -16,6 +16,8 @@ public class Panel extends JPanel {
     static boolean secondplayer = false;
     static boolean playwithbot = false;
     static boolean autoplay = false;
+    static String str1="X"; static String str2="O";
+    static String temp="";
 
     static int count = 9;
 
@@ -42,9 +44,6 @@ public class Panel extends JPanel {
                 b1.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -54,9 +53,6 @@ public class Panel extends JPanel {
                 b2.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -66,9 +62,6 @@ public class Panel extends JPanel {
                 b3.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -87,9 +80,6 @@ public class Panel extends JPanel {
                 b5.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -99,9 +89,6 @@ public class Panel extends JPanel {
                 b6.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -111,9 +98,6 @@ public class Panel extends JPanel {
                 b7.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -123,9 +107,6 @@ public class Panel extends JPanel {
                 b8.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -135,9 +116,6 @@ public class Panel extends JPanel {
                 b9.gamePlay(Panel.this);
                 if (playwithbot) {
                     botGameplay();
-                    if (autoplay) {
-                        botGameplay();
-                    }
                 }
             }
         });
@@ -147,45 +125,63 @@ public class Panel extends JPanel {
     public static boolean checkWinner() {
         if (b1.getText() != "" && b2.getText() != "" && b3.getText() != "") {
             if (b1.getText() == b2.getText() && b2.getText() == b3.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b1.getText()+"!");
+                restart();
                 return true;
             }
         }
         if (b4.getText() != "" && b5.getText() != "" && b6.getText() != "") {
             if (b4.getText() == b5.getText() && b5.getText() == b6.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b4.getText()+"!");
+                restart();
                 return true;
             }
         }
         if (b7.getText() != "" && b8.getText() != "" && b9.getText() != "") {
             if (b7.getText() == b8.getText() && b8.getText() == b9.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b7.getText()+"!");
+                restart();
                 return true;
             }
         }
         if (b1.getText() != "" && b4.getText() != "" && b7.getText() != "") {
             if (b1.getText() == b4.getText() && b4.getText() == b7.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b1.getText()+"!");
+                restart();
                 return true;
             }
         }
         if (b2.getText() != "" && b5.getText() != "" && b8.getText() != "") {
             if (b2.getText() == b5.getText() && b5.getText() == b8.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b2.getText()+"!");
+                restart();
                 return true;
             }
         }
         if (b3.getText() != "" && b6.getText() != "" && b9.getText() != "") {
             if (b3.getText() == b6.getText() && b6.getText() == b9.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b3.getText()+"!");
+                restart();
                 return true;
             }
         }
         if (b7.getText() != "" && b5.getText() != "" && b3.getText() != "") {
             if (b7.getText() == b5.getText() && b5.getText() == b3.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b7.getText()+"!");
+                restart();
                 return true;
             }
         }
         if (b1.getText() != "" && b5.getText() != "" && b9.getText() != "") {
             if (b1.getText() == b5.getText() && b5.getText() == b9.getText()) {
+                JOptionPane.showMessageDialog(null, "Победил "+b1.getText()+"!");
+                restart();
                 return true;
             }
         }
-        if (count == 0) {
+        if(b1.getText()!="" && b2.getText()!="" && b3.getText()!="" &&
+                b4.getText()!="" && b5.getText()!="" && b6.getText()!="" &&
+                b7.getText()!="" && b8.getText()!="" && b9.getText()!="" ){
             JOptionPane.showMessageDialog(null, "No winners");
             restart();
         }
@@ -213,6 +209,25 @@ public class Panel extends JPanel {
             }
         } else {
             System.exit(0);
+        }
+    }
+
+    public static void restart_without_confirm(){
+        b1.setText("");
+        b2.setText("");
+        b3.setText("");
+        b4.setText("");
+        b5.setText("");
+        b6.setText("");
+        b7.setText("");
+        b8.setText("");
+        b9.setText("");
+        firstplayer = true;
+        secondplayer = false;
+        if (playwithbot) {
+            count = 5;
+        } else {
+            count = 9;
         }
     }
 
@@ -430,9 +445,100 @@ public class Panel extends JPanel {
         }
     }
 
-    public void autoPlay() {
-    }
+    public static void autoPlay() {
+        int rand=0;
+        String strX="X"; String strO="O";
+        String str=strX;
 
+        while(b1.getText()=="" || b2.getText()=="" || b3.getText()=="" ||
+                b4.getText()=="" || b5.getText()=="" || b6.getText()=="" ||
+                b7.getText()=="" || b8.getText()=="" || b9.getText()=="" ){
+
+            rand=(int)Math.abs(Math.random()*10%9);
+
+            if(rand==0){
+                if(b1.getText()=="") {
+                    b1.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==1){
+                if(b2.getText()=="") {
+                    b2.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==2){
+                if(b3.getText()=="") {
+                    b3.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==3){
+                if(b4.getText()=="") {
+                    b4.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==4){
+                if(b5.getText()=="") {
+                    b5.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==5){
+                if(b6.getText()=="") {
+                    b6.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==6){
+                if(b7.getText()=="") {
+                    b7.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==7){
+                if(b8.getText()=="") {
+                    b8.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+            if(rand==8){
+                if(b9.getText()=="") {
+                    b9.setButtonAs(str);
+                    if(str==strX){
+                        str=strO;
+                    }
+                    else{str=strX;}
+                }
+            }
+        }
+    }
 
     public void addOnPanel() {
         this.add(b1);
