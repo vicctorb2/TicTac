@@ -1,14 +1,10 @@
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-import javafx.scene.layout.Pane;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-/**
- * Created by ррор on 24.02.2016.
- */
 public class Panel extends JPanel {
 
     static Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
@@ -16,13 +12,16 @@ public class Panel extends JPanel {
     static boolean secondplayer = false;
     static boolean playwithbot = false;
     static boolean autoplay = false;
-    static String str1="X"; static String str2="O";
-    static String temp="";
+    static String temp = "";
+    static File file;
+    static int turn = 0;
+    static int type = 0;
 
     static int count = 9;
 
 
     public Panel() {
+        file = new File("D:\\TicTac\\src\\Log.txt");
         b1 = new Button();
         b2 = new Button();
         b3 = new Button();
@@ -38,85 +37,58 @@ public class Panel extends JPanel {
     }
 
     private void setListeners() {
-        b1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b1.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b1.addActionListener(e -> {
+            b1.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b2.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b2.addActionListener(e -> {
+            b2.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b3.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b3.addActionListener(e -> {
+            b3.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b4.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b4.addActionListener(e -> {
+            b4.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b5.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b5.addActionListener(e -> {
+            b5.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b6.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b6.addActionListener(e -> {
+            b6.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b7.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b7.addActionListener(e -> {
+            b7.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b8.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b8.addActionListener(e -> {
+            b8.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
-        b9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                b9.gamePlay(Panel.this);
-                if (playwithbot) {
-                    botGameplay();
-                }
+        b9.addActionListener(e -> {
+            b9.gamePlay(Panel.this);
+            if (playwithbot) {
+                botGameplay();
             }
         });
 
@@ -125,63 +97,63 @@ public class Panel extends JPanel {
     public static boolean checkWinner() {
         if (b1.getText() != "" && b2.getText() != "" && b3.getText() != "") {
             if (b1.getText() == b2.getText() && b2.getText() == b3.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b1.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b1.getText() + "!");
                 restart();
                 return true;
             }
         }
         if (b4.getText() != "" && b5.getText() != "" && b6.getText() != "") {
             if (b4.getText() == b5.getText() && b5.getText() == b6.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b4.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b4.getText() + "!");
                 restart();
                 return true;
             }
         }
         if (b7.getText() != "" && b8.getText() != "" && b9.getText() != "") {
             if (b7.getText() == b8.getText() && b8.getText() == b9.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b7.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b7.getText() + "!");
                 restart();
                 return true;
             }
         }
         if (b1.getText() != "" && b4.getText() != "" && b7.getText() != "") {
             if (b1.getText() == b4.getText() && b4.getText() == b7.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b1.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b1.getText() + "!");
                 restart();
                 return true;
             }
         }
         if (b2.getText() != "" && b5.getText() != "" && b8.getText() != "") {
             if (b2.getText() == b5.getText() && b5.getText() == b8.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b2.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b2.getText() + "!");
                 restart();
                 return true;
             }
         }
         if (b3.getText() != "" && b6.getText() != "" && b9.getText() != "") {
             if (b3.getText() == b6.getText() && b6.getText() == b9.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b3.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b3.getText() + "!");
                 restart();
                 return true;
             }
         }
         if (b7.getText() != "" && b5.getText() != "" && b3.getText() != "") {
             if (b7.getText() == b5.getText() && b5.getText() == b3.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b7.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b7.getText() + "!");
                 restart();
                 return true;
             }
         }
         if (b1.getText() != "" && b5.getText() != "" && b9.getText() != "") {
             if (b1.getText() == b5.getText() && b5.getText() == b9.getText()) {
-                JOptionPane.showMessageDialog(null, "Победил "+b1.getText()+"!");
+                JOptionPane.showMessageDialog(null, "Победил " + b1.getText() + "!");
                 restart();
                 return true;
             }
         }
-        if(b1.getText()!="" && b2.getText()!="" && b3.getText()!="" &&
-                b4.getText()!="" && b5.getText()!="" && b6.getText()!="" &&
-                b7.getText()!="" && b8.getText()!="" && b9.getText()!="" ){
+        if (b1.getText() != "" && b2.getText() != "" && b3.getText() != "" &&
+                b4.getText() != "" && b5.getText() != "" && b6.getText() != "" &&
+                b7.getText() != "" && b8.getText() != "" && b9.getText() != "") {
             JOptionPane.showMessageDialog(null, "No winners");
             restart();
         }
@@ -202,6 +174,8 @@ public class Panel extends JPanel {
             b9.setText("");
             firstplayer = true;
             secondplayer = false;
+            turn=0;
+            file.delete();
             if (playwithbot) {
                 count = 5;
             } else {
@@ -212,7 +186,7 @@ public class Panel extends JPanel {
         }
     }
 
-    public static void restart_without_confirm(){
+    public static void restart_without_confirm() {
         b1.setText("");
         b2.setText("");
         b3.setText("");
@@ -446,95 +420,141 @@ public class Panel extends JPanel {
     }
 
     public static void autoPlay() {
-        int rand=0;
-        String strX="X"; String strO="O";
-        String str=strX;
+        int rand = 0;
+        String strX = "X";
+        String strO = "O";
+        String str = strX;
+        file.delete();
+        while (b1.getText() == "" || b2.getText() == "" || b3.getText() == "" ||
+                b4.getText() == "" || b5.getText() == "" || b6.getText() == "" ||
+                b7.getText() == "" || b8.getText() == "" || b9.getText() == "") {
 
-        while(b1.getText()=="" || b2.getText()=="" || b3.getText()=="" ||
-                b4.getText()=="" || b5.getText()=="" || b6.getText()=="" ||
-                b7.getText()=="" || b8.getText()=="" || b9.getText()=="" ){
+            rand = (int) Math.abs(Math.random() * 10 % 9);
 
-            rand=(int)Math.abs(Math.random()*10%9);
-
-            if(rand==0){
-                if(b1.getText()=="") {
+            if (rand == 0) {
+                if (b1.getText() == "") {
+                    turn++;
+                    writeLog(rand,str);
                     b1.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==1){
-                if(b2.getText()=="") {
+            if (rand == 1) {
+                if (b2.getText() == "") {
+                    turn++;
+                    writeLog(rand,str);
                     b2.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==2){
-                if(b3.getText()=="") {
+            if (rand == 2) {
+                if (b3.getText() == "") {
                     b3.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    turn++;
+                    writeLog(rand,str);
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==3){
-                if(b4.getText()=="") {
+            if (rand == 3) {
+                if (b4.getText() == "") {
                     b4.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    turn++;
+                    writeLog(rand,str);
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==4){
-                if(b5.getText()=="") {
+            if (rand == 4) {
+                if (b5.getText() == "") {
                     b5.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    turn++;
+                    writeLog(rand,str);
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==5){
-                if(b6.getText()=="") {
+            if (rand == 5) {
+                if (b6.getText() == "") {
                     b6.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    turn++;
+                    writeLog(rand,str);
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==6){
-                if(b7.getText()=="") {
+            if (rand == 6) {
+                if (b7.getText() == "") {
                     b7.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    turn++;
+                    writeLog(rand,str);
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==7){
-                if(b8.getText()=="") {
+            if (rand == 7) {
+                if (b8.getText() == "") {
                     b8.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    turn++;
+                    writeLog(rand,str);
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 1;
                     }
-                    else{str=strX;}
                 }
             }
-            if(rand==8){
-                if(b9.getText()=="") {
+            if (rand == 8) {
+                if (b9.getText() == "") {
                     b9.setButtonAs(str);
-                    if(str==strX){
-                        str=strO;
+                    turn++;
+                    writeLog(rand,str);
+                    if (str == strX) {
+                        str = strO;
+                        type = 2;
+                    } else {
+                        str = strX;
+                        type = 2;
                     }
-                    else{str=strX;}
                 }
             }
         }
@@ -550,6 +570,23 @@ public class Panel extends JPanel {
         this.add(b7);
         this.add(b8);
         this.add(b9);
+    }
+
+    public static void writeLog(int rand, String str){
+        try(FileWriter writer = new FileWriter(file, true))
+        {
+            writer.write( String.valueOf(turn) );
+            writer.append(' ');
+            writer.write(String.valueOf(rand));
+            writer.append(' ');
+            writer.write(str);
+            writer.append(' ');
+            writer.append('\n');
+            writer.flush();
+        }
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }
 

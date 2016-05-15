@@ -1,12 +1,6 @@
-import sun.management.snmp.jvmmib.JVM_MANAGEMENT_MIB;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-/**
- * Created by ррор on 24.02.2016.
- */
 public class Frame extends JFrame {
     Panel panel = new Panel();
     Button button = new Button();
@@ -71,102 +65,59 @@ public class Frame extends JFrame {
 
         this.setJMenuBar(menuBar);
 
-        exit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        exit.addActionListener(e -> System.exit(0));
 
-        restart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Panel.restart();
-            }
-        });
-        classic.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                button.setButtonFont(0);
-            }
-        });
-        styled.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                button.setButtonFont(1);
-            }
-        });
-        mistral.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                button.setButtonFont(2);
-            }
-        });
-        green.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Panel.b1.setButtonBackground(0);
-                Panel.b2.setButtonBackground(0);
-                Panel.b3.setButtonBackground(0);
-                Panel.b4.setButtonBackground(0);
-                Panel.b5.setButtonBackground(0);
-                Panel.b6.setButtonBackground(0);
-                Panel.b7.setButtonBackground(0);
-                Panel.b8.setButtonBackground(0);
-                Panel.b9.setButtonBackground(0);
+        restart.addActionListener(e -> Panel.restart());
+        classic.addActionListener(e -> button.setButtonFont(0));
+        styled.addActionListener(e -> button.setButtonFont(1));
+        mistral.addActionListener(e -> button.setButtonFont(2));
+        green.addActionListener(e -> {
+            Panel.b1.setButtonBackground(0);
+            Panel.b2.setButtonBackground(0);
+            Panel.b3.setButtonBackground(0);
+            Panel.b4.setButtonBackground(0);
+            Panel.b5.setButtonBackground(0);
+            Panel.b6.setButtonBackground(0);
+            Panel.b7.setButtonBackground(0);
+            Panel.b8.setButtonBackground(0);
+            Panel.b9.setButtonBackground(0);
 
-            }
         });
-        yellow.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Panel.b1.setButtonBackground(1);
-                Panel.b2.setButtonBackground(1);
-                Panel.b3.setButtonBackground(1);
-                Panel.b4.setButtonBackground(1);
-                Panel.b5.setButtonBackground(1);
-                Panel.b6.setButtonBackground(1);
-                Panel.b7.setButtonBackground(1);
-                Panel.b8.setButtonBackground(1);
-                Panel.b9.setButtonBackground(1);
-            }
+        yellow.addActionListener(e -> {
+            Panel.b1.setButtonBackground(1);
+            Panel.b2.setButtonBackground(1);
+            Panel.b3.setButtonBackground(1);
+            Panel.b4.setButtonBackground(1);
+            Panel.b5.setButtonBackground(1);
+            Panel.b6.setButtonBackground(1);
+            Panel.b7.setButtonBackground(1);
+            Panel.b8.setButtonBackground(1);
+            Panel.b9.setButtonBackground(1);
         });
-        blue.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Panel.b1.setButtonBackground(2);
-                Panel.b2.setButtonBackground(2);
-                Panel.b3.setButtonBackground(2);
-                Panel.b4.setButtonBackground(2);
-                Panel.b5.setButtonBackground(2);
-                Panel.b6.setButtonBackground(2);
-                Panel.b7.setButtonBackground(2);
-                Panel.b8.setButtonBackground(2);
-                Panel.b9.setButtonBackground(2);
-            }
+        blue.addActionListener(e -> {
+            Panel.b1.setButtonBackground(2);
+            Panel.b2.setButtonBackground(2);
+            Panel.b3.setButtonBackground(2);
+            Panel.b4.setButtonBackground(2);
+            Panel.b5.setButtonBackground(2);
+            Panel.b6.setButtonBackground(2);
+            Panel.b7.setButtonBackground(2);
+            Panel.b8.setButtonBackground(2);
+            Panel.b9.setButtonBackground(2);
         });
-        singleplayer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Panel.playwithbot=false;
-                Panel.count=9;
-                Panel.restart();
-            }
+        singleplayer.addActionListener(e -> {
+            Panel.playwithbot = false;
+            Panel.count = 9;
+            Panel.restart();
         });
-        multiplayer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Panel.playwithbot=true;
-                Panel.count=5;
-                Panel.restart();
-            }
+        multiplayer.addActionListener(e -> {
+            Panel.playwithbot = true;
+            Panel.count = 5;
+            Panel.restart();
         });
-        autoplay.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Panel.restart_without_confirm();
-                Panel.autoPlay();
-            }
+        autoplay.addActionListener(e -> {
+            Panel.restart_without_confirm();
+            Panel.autoPlay();
         });
     }
 }
