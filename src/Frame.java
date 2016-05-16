@@ -1,10 +1,19 @@
 
 import javax.swing.*;
 
+/**
+ * Class Frame extend JFrame class. In this class we created the mainframe and add the Panel on it.
+ * Class Frame consist of some methods such as "addPanelonFrame" which add Panel on mainframe,
+ * "createMenu" which create menu on the top side of the mainframe and consist of 1 menubar, 4 menus.
+ * In the constructor of this class we apply params for mainframe GUI and add the panel on frame.
+ */
 public class Frame extends JFrame {
     Panel panel = new Panel();
     Button button = new Button();
 
+    /**
+     * In the constructor of this class we apply params for mainframe GUI and add the panel on frame.
+     */
     public Frame() {
         createMenu();
         setTitle("TicTac");
@@ -18,12 +27,20 @@ public class Frame extends JFrame {
         this.addPanelOnFrame(panel);
     }
 
+    /**
+     * In this class we add the panel on frame.
+     *
+     * @param panel the JPanel which  we want to add to the JFrame
+     */
     public void addPanelOnFrame(JPanel panel) {
         this.getContentPane().add(panel);
         panel.setVisible(true);
         revalidate();
     }
 
+    /**
+     * Method creates menubar with 4 menus in it and add this on mainframe.
+     */
     public void createMenu() {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Menu");
