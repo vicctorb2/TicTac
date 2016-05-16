@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Button.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Button.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Button.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.528384">
-              <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding>
                 <element signature="e#1270#1271#0" expanded="true" />
                 <element signature="e#1299#1300#0" expanded="true" />
@@ -45,17 +45,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Panel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Panel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.15283842">
+              <caret line="187" column="33" selection-start-line="187" selection-start-column="33" selection-end-line="187" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+                <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+                <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
                 <element signature="method#restart#0;class#Panel#0" expanded="false" />
                 <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
                 <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
                 <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+                <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+                <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -96,9 +101,9 @@
         <option value="$PROJECT_DIR$/src/META-INF/Gameplay.kt" />
         <option value="$PROJECT_DIR$/src/Gameplay.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Panel.java" />
         <option value="$PROJECT_DIR$/src/Frame.java" />
         <option value="$PROJECT_DIR$/src/Button.java" />
+        <option value="$PROJECT_DIR$/src/Panel.java" />
       </list>
     </option>
   </component>
@@ -516,7 +521,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -586,7 +591,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -628,10 +633,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,10 +679,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -710,10 +725,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -751,10 +771,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -792,10 +817,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -833,10 +863,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -882,10 +917,15 @@
           <caret line="431" column="0" selection-start-line="431" selection-start-column="0" selection-end-line="431" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -923,10 +963,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -964,10 +1009,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -997,10 +1047,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1030,10 +1085,15 @@
           <caret line="403" column="12" selection-start-line="403" selection-start-column="12" selection-end-line="403" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1063,10 +1123,15 @@
           <caret line="403" column="12" selection-start-line="403" selection-start-column="12" selection-end-line="403" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
             <element signature="method#restart#0;class#Panel#0" expanded="false" />
             <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
             <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
             <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1075,20 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#restart#0;class#Panel#0" expanded="false" />
-            <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
-            <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
-            <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,11 +1161,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.528384">
-          <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
           <folding>
             <element signature="e#1270#1271#0" expanded="true" />
             <element signature="e#1299#1300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15283842">
+          <caret line="187" column="33" selection-start-line="187" selection-start-column="33" selection-end-line="187" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Panel#0;class#Panel#0" expanded="false" />
+            <element signature="method#setListeners#0;class#Panel#0" expanded="false" />
+            <element signature="method#checkWinner#0;class#Panel#0" expanded="false" />
+            <element signature="method#restart#0;class#Panel#0" expanded="false" />
+            <element signature="method#restart_without_confirm#0;class#Panel#0" expanded="false" />
+            <element signature="method#botGameplay#0;class#Panel#0" expanded="false" />
+            <element signature="method#autoPlay#0;class#Panel#0" expanded="false" />
+            <element signature="method#addOnPanel#0;class#Panel#0" expanded="false" />
+            <element signature="method#writeLog#0;class#Panel#0" expanded="false" />
           </folding>
         </state>
       </provider>
