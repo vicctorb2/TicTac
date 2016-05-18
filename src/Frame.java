@@ -84,7 +84,7 @@ public class Frame extends JFrame {
 
         exit.addActionListener(e -> System.exit(0));
 
-        restart.addActionListener(e -> Panel.restart());
+        restart.addActionListener(e -> GamePlay.restart());
         classic.addActionListener(e -> button.setButtonFont(0));
         styled.addActionListener(e -> button.setButtonFont(1));
         mistral.addActionListener(e -> button.setButtonFont(2));
@@ -124,17 +124,17 @@ public class Frame extends JFrame {
         });
         singleplayer.addActionListener(e -> {
             Panel.playwithbot = false;
-            Panel.count = 9;
-            Panel.restart();
+            GamePlay.count = 9;
+            GamePlay.restart();
         });
         multiplayer.addActionListener(e -> {
             Panel.playwithbot = true;
-            Panel.count = 5;
-            Panel.restart();
+            GamePlay.count = 5;
+            GamePlay.restart();
         });
         autoplay.addActionListener(e -> {
-            Panel.restart_without_confirm();
-            Panel.autoPlay();
+            GamePlay.restartWithoutConfirm();
+            GamePlay.autoPlay();
         });
     }
 }

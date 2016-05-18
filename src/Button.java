@@ -1,7 +1,4 @@
-import sun.font.FontLineMetrics;
-
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
 import java.awt.*;
 
 /**
@@ -81,7 +78,6 @@ public class Button extends JButton {
     public void setButtonAsX() {
         setText("X");
         setFont(font);
-        Panel.checkWinner();
     }
 
     /**
@@ -90,7 +86,6 @@ public class Button extends JButton {
     public void setButtonAsO() {
         setText("O");
         setFont(font);
-        Panel.checkWinner();
     }
 
     /**
@@ -101,7 +96,6 @@ public class Button extends JButton {
     public void setButtonAs(String str) {
         setText(str);
         setFont(font);
-        Panel.checkWinner();
     }
 
     /**
@@ -110,22 +104,22 @@ public class Button extends JButton {
      * @param panel is the object of JPanel class.
      */
     public void gamePlay(Panel panel) {
-        if (panel.firstplayer) {
+        if (GamePlay.firstplayer) {
             if (this.getText() == "") {
-                panel.count--;
+                GamePlay.count--;
                 this.setButtonAsX();
                 if (!Panel.playwithbot) {
-                    Panel.firstplayer = false;
-                    Panel.secondplayer = true;
+                    GamePlay.firstplayer = false;
+                    GamePlay.secondplayer = true;
                 }
             }
         } else {
             if (this.getText() == "") {
-                panel.count--;
+                GamePlay.count--;
                 this.setButtonAsO();
                 if (!Panel.playwithbot) {
-                    Panel.firstplayer = true;
-                    Panel.secondplayer = false;
+                    GamePlay.firstplayer = true;
+                    GamePlay.secondplayer = false;
                 }
             }
         }
