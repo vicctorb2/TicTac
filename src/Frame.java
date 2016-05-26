@@ -59,6 +59,7 @@ public class Frame extends JFrame {
         JMenuItem singleplayer = new JMenuItem("Singleplayer");
         JMenuItem multiplayer = new JMenuItem("Multiplayer");
         JMenuItem autoplay = new JMenuItem("Autoplay");
+        JMenuItem loadReplay = new JMenuItem("Load last game");
 
         menu.add(restart);
         menu.add(exit);
@@ -74,6 +75,7 @@ public class Frame extends JFrame {
         menu4.add(singleplayer);
         menu4.add(multiplayer);
         menu4.add(autoplay);
+        menu4.add(loadReplay);
 
         menuBar.add(menu);
         menuBar.add(menu2);
@@ -125,16 +127,19 @@ public class Frame extends JFrame {
         singleplayer.addActionListener(e -> {
             Panel.playwithbot = false;
             GamePlay.count = 9;
-            GamePlay.restart();
+            GamePlay.restartWithoutConfirm();
         });
         multiplayer.addActionListener(e -> {
             Panel.playwithbot = true;
             GamePlay.count = 5;
-            GamePlay.restart();
+            GamePlay.restartWithoutConfirm();
         });
         autoplay.addActionListener(e -> {
             GamePlay.restartWithoutConfirm();
             GamePlay.autoPlay();
+        });
+        loadReplay.addActionListener(e -> {
+            GamePlay.loadGame();
         });
     }
 }

@@ -1,5 +1,7 @@
+
 import javax.swing.*;
 import java.awt.*;
+
 
 /**
  * This class extends JButton class and have methods for working with gamefield buttons.

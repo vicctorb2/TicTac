@@ -1,7 +1,6 @@
 import javax.swing.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.CharBuffer;
 
 /**
  * This class is responsible for tne main functions and algorithms of the game such as restart, botGameplay, autoplay,
@@ -190,7 +189,6 @@ public class GamePlay {
             firstplayer = true;
             secondplayer = false;
             turn = 0;
-            file.delete();
             if (Panel.playwithbot) {
                 count = 5;
             } else {
@@ -450,16 +448,65 @@ public class GamePlay {
      */
     public static void writeLog(int rand, String str) {
         try (FileWriter writer = new FileWriter(file, true)) {
-            writer.write(String.valueOf(turn));
-            writer.append(' ');
-            writer.write(String.valueOf(rand));
-            writer.append(' ');
             writer.write(str);
-            writer.append(' ');
-            writer.append('\n');
+            writer.write(String.valueOf(rand));
             writer.flush();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+
+    public static void loadGame(){
+        BufferedReader bufferedReader = null;
+        try {
+            bufferedReader = new BufferedReader(new FileReader("D:\\TicTac\\src\\Log.txt"));
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        String str="";
+        char c;
+        int symbol = 0;
+        try {
+            symbol = bufferedReader.read();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        while (symbol != -1) {
+            c = (char) symbol;
+            if(c=='X'){ str = "X";}
+            else if(c=='O') {str = "O";}
+            if(c=='0') {
+                b1.setButtonAs(str);
+            }
+            if(c=='1') {
+                b2.setButtonAs(str);
+            }
+            if(c=='2') {
+                b3.setButtonAs(str);
+            }
+            if(c=='3') {
+                b4.setButtonAs(str);
+            }
+            if(c=='4') {
+                b5.setButtonAs(str);
+            }
+            if(c=='5') {
+                b6.setButtonAs(str);
+            }
+            if(c=='6') {
+                b7.setButtonAs(str);
+            }
+            if(c=='7') {
+                b8.setButtonAs(str);
+            }
+            if(c=='8') {
+                b9.setButtonAs(str);
+            }
+            try {
+                symbol = bufferedReader.read(); // Читаем символ
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }
