@@ -1,6 +1,9 @@
+import Statistic.*;
+
 import javax.swing.*;
 import java.io.*;
-import java.nio.CharBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is responsible for tne main functions and algorithms of the game such as restart, botGameplay, autoplay,
@@ -449,57 +452,63 @@ public class GamePlay {
     public static void writeLog(int rand, String str) {
         try (FileWriter writer = new FileWriter(file, true)) {
             writer.write(str);
+            writer.append(" ");
             writer.write(String.valueOf(rand));
+            writer.append("\r\n");
             writer.flush();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
 
-    public static void loadGame(){
+    public static void loadGame() {
         BufferedReader bufferedReader = null;
         try {
             bufferedReader = new BufferedReader(new FileReader("D:\\TicTac\\src\\Log.txt"));
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
-        String str="";
+        String str = "";
         char c;
         int symbol = 0;
         try {
+            assert bufferedReader != null;
             symbol = bufferedReader.read();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
         while (symbol != -1) {
             c = (char) symbol;
-            if(c=='X'){ str = "X";}
-            else if(c=='O') {str = "O";}
-            if(c=='0') {
+            if (c == 'X') {
+                str = "X";
+            } else if (c == 'O') {
+                str = "O";
+            }
+            if (c == '0') {
                 b1.setButtonAs(str);
             }
-            if(c=='1') {
+            if (c == '1') {
                 b2.setButtonAs(str);
             }
-            if(c=='2') {
+            if (c == '2') {
                 b3.setButtonAs(str);
             }
-            if(c=='3') {
+            if (c == '3') {
                 b4.setButtonAs(str);
             }
-            if(c=='4') {
+            if (c == '4') {
                 b5.setButtonAs(str);
             }
-            if(c=='5') {
+            if (c == '5') {
                 b6.setButtonAs(str);
             }
-            if(c=='6') {
+            if (c == '6') {
                 b7.setButtonAs(str);
             }
-            if(c=='7') {
+            if (c == '7') {
                 b8.setButtonAs(str);
             }
-            if(c=='8') {
+            if (c == '8') {
                 b9.setButtonAs(str);
             }
             try {
@@ -508,5 +517,131 @@ public class GamePlay {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+
+    public static void javaSort() {
+        JavaSort javaSort = new JavaSort();
+
+        List<Notation> notations = new ArrayList<Notation>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String s = reader.readLine();
+            while (s != null) {
+                String[] split = s.split(" ");
+                Notation notation = new Notation(
+                        split[0],
+                        Integer.parseInt(split[1])
+                );
+                notations.add(notation);
+                s = reader.readLine();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        Notation[] n = new Notation[notations.size()];
+
+        for (int i = 0; i < notations.size(); i++) {
+            n[i] = notations.get(i);
+        }
+
+        long time = System.currentTimeMillis();
+        javaSort.qSort(n, 0, n.length - 1);
+
+        time = System.currentTimeMillis() - time;
+        new SortTable("Java", n, Long.toString(time));
+
+    }
+
+    public static void scalaSort() {
+        ScalaSort scalaSort = new ScalaSort();
+
+        List<Notation> notations = new ArrayList<Notation>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String s = reader.readLine();
+            while (s != null) {
+                String[] split = s.split(" ");
+                Notation notation = new Notation(
+                        split[0],
+                        Integer.parseInt(split[1])
+                );
+                notations.add(notation);
+                s = reader.readLine();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        Notation[] n = new Notation[notations.size()];
+
+        for (int i = 0; i < notations.size(); i++) {
+            n[i] = notations.get(i);
+        }
+
+        long time = System.currentTimeMillis();
+        scalaSort.sort(n);
+
+        time = System.currentTimeMillis() - time;
+        new SortTable("Scala", n, Long.toString(time));
+    }
+
+    public static void notationTransform() {
+        List<Notation> notations = new ArrayList<Notation>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String s = reader.readLine();
+            while (s != null) {
+                String[] split = s.split(" ");
+                Notation notation = new Notation(
+                        split[0],
+                        Integer.parseInt(split[1])
+                );
+                notations.add(notation);
+                s = reader.readLine();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        NotationTransformer notationTransformer = new NotationTransformer();
+        int size = 0;
+        System.out.println("New botgame is started.");
+        for (int i = 0; i < notations.size(); i++) {
+            size++;
+            System.out.println(notationTransformer.parse(notations.get(i)));
+        }
+
+        System.out.println(notationTransformer.parse(size));
+    }
+
+    public static void scalaStatistic() {
+
+        List<Notation> notations = new ArrayList<Notation>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String s = reader.readLine();
+            while (s != null) {
+                String[] split = s.split(" ");
+                Notation notation = new Notation(
+                        split[0],
+                        Integer.parseInt(split[1])
+                );
+                notations.add(notation);
+                s = reader.readLine();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        Notation[] n = new Notation[notations.size()];
+
+        for (int i = 0; i < notations.size(); i++) {
+            n[i] = notations.get(i);
+        }
+
+        ScalaStatistic scalaStatistic = new ScalaStatistic();
+        scalaStatistic.getStatistic(n);
     }
 }

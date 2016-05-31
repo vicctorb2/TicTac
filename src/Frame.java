@@ -47,6 +47,7 @@ public class Frame extends JFrame {
         JMenu menu2 = new JMenu("Set Text Style");
         JMenu menu3 = new JMenu("Set Background");
         JMenu menu4 = new JMenu("Set Play Mode");
+        JMenu menu5 = new JMenu("Statistic");
 
         JMenuItem restart = new JMenuItem("Restart now");
         JMenuItem exit = new JMenuItem("Exit");
@@ -60,6 +61,10 @@ public class Frame extends JFrame {
         JMenuItem multiplayer = new JMenuItem("Multiplayer");
         JMenuItem autoplay = new JMenuItem("Autoplay");
         JMenuItem loadReplay = new JMenuItem("Load last game");
+        JMenuItem scalaSort = new JMenuItem("Scala Sort");
+        JMenuItem javaSort = new JMenuItem("Java Sort");
+        JMenuItem statistics = new JMenuItem("Scala Statistic");
+        JMenuItem notationTransform = new JMenuItem("Notation Transform");
 
         menu.add(restart);
         menu.add(exit);
@@ -77,10 +82,16 @@ public class Frame extends JFrame {
         menu4.add(autoplay);
         menu4.add(loadReplay);
 
+        menu5.add(scalaSort);
+        menu5.add(javaSort);
+        menu5.add(statistics);
+        menu5.add(notationTransform);
+
         menuBar.add(menu);
         menuBar.add(menu2);
         menuBar.add(menu3);
         menuBar.add(menu4);
+        menuBar.add(menu5);
 
         this.setJMenuBar(menuBar);
 
@@ -140,6 +151,18 @@ public class Frame extends JFrame {
         });
         loadReplay.addActionListener(e -> {
             GamePlay.loadGame();
+        });
+        scalaSort.addActionListener(e -> {
+            GamePlay.scalaSort();
+        });
+        javaSort.addActionListener(e -> {
+            GamePlay.javaSort();
+        });
+        statistics.addActionListener(e -> {
+            GamePlay.scalaStatistic();
+        });
+        notationTransform.addActionListener(e -> {
+            GamePlay.notationTransform();
         });
     }
 }
