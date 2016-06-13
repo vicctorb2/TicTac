@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class GamePlay {
 
-    static File file = new File("D:\\TicTac\\src\\Log.txt");
+    static File file = new File(".\\src\\Log.txt");
     static int turn = 0;
     static int type = 0;
     static boolean firstplayer = true;
@@ -464,7 +464,7 @@ public class GamePlay {
     public static void loadGame() {
         BufferedReader bufferedReader = null;
         try {
-            bufferedReader = new BufferedReader(new FileReader("D:\\TicTac\\src\\Log.txt"));
+            bufferedReader = new BufferedReader(new FileReader(".\\src\\Log.txt"));
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
