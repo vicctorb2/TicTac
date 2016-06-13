@@ -4,9 +4,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-/**
- * The class with the table of statistics of the games that were played
- */
 public class StatisticTable {
 
     JDialog dialog = null;

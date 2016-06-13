@@ -2,9 +2,6 @@ package Statistic;
 
 import java.util.Random;
 
-/**
- * This class helps us to sort notation on java
- */
 public class JavaSort {
 
     static Random rand = new Random();

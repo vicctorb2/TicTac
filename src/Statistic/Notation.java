@@ -1,8 +1,5 @@
 package Statistic;
 
-/**
- * Notation class which consost of player and button fields
- */
 public class Notation {
 
     private String player;
@@ -14,10 +11,6 @@ public class Notation {
         this.button = button;
     }
 
-    /**
-     * returns the player mark (x or O)
-     * @return
-     */
     public String getPlayer() {
         return player;
     }
@@ -26,18 +19,10 @@ public class Notation {
         this.player = player;
     }
 
-    /**
-     * returns the button which was clicked by the player
-     * @return
-     */
     public int getButton() {
         return button;
     }
 
-    /**
-     * sets the button which was clicked by the player
-     * @param button
-     */
     public void setButton(int button) {
         this.button = button;
     }

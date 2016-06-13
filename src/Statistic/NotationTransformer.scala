@@ -1,8 +1,6 @@
 package Statistic
 
-/**
-  * This class tranforms our notation to the normal for user view
-  */
+
 class NotationTransformer {
   def parse(temp: Any): Any = {
     temp match {
@@ -11,9 +9,6 @@ class NotationTransformer {
     }
   }
 
-  /**
-    *For getting output message
-    */
   def getOutputMessage(temp: Notation): String = {
     "Player put "+ temp.getPlayer+" to "+temp.getButton + " Button"
   }
